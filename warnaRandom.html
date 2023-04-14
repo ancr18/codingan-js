@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warna Random</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .warna{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ffffff;
+            border: none;
+            color: black;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+        .warna:hover{
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+
+            
+        }
+    </style>
+</head>
+<body>
+    <button class="warna">WARNA RANDOM</button>
+
+    <script>
+        let body = document.querySelector('body');
+        let warna = document.querySelector('.warna');
+        
+        warna.addEventListener('click', function(){
+            let r = Math.round(Math.random() * 255 + 1);
+            let g = Math.round(Math.random() * 255 + 1);
+            let b = Math.round(Math.random() * 255 + 1);
+            body.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
+            warna.style.color = `rgb(${r}, ${g}, ${b})`;
+        });
+    </script>
+</body>
+</html>
